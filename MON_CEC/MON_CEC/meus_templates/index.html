@@ -1,0 +1,82 @@
+<!doctype html>
+{% load static %}
+<html lang="pt">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTTPizzaria</title>
+    <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.3.0/pure-min.css">
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}" />
+</head>
+<body>
+<div class="content">
+    <div class="header">
+        <div class="pure-menu pure-menu-open pure-menu-fixed pure-menu-horizontal">
+            <a class="pure-menu-heading" href="">MON_CEC</a>
+            <ul>
+                <li class="pure-menu-selected"><a href="#">Início</a></li>
+                <li><a href="#">Contato</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="splash">
+        <div class="pure-g-r">
+            <div class="pure-u-1">
+                <div class="l-box splash-text">
+                    <h1 class="splash-head" style="text-align: center;">
+                        MON_CEC
+                    </h1>
+                </div>
+            </div>
+        </div>
+    </div>
+    <ul class="content">
+            {% for pizza in pizzas %}
+                {% if not forloop.counter|divisibleby:2 %}
+                <div class="pure-g-r content-ribbon">
+                    <div class="pure-u-2-3">
+                        <div class="l-box">
+                            <h4 class="content-subhead">{{ pizza.nome }}</h4>
+                            <h3>{{ pizza.ingredientes }}</h3>
+                            <p style = color:dimgray >
+                                {{ pizza.descrição }}
+                            </p>
+                            <h3>R$ {{ pizza.preço }}</h3>
+                        </div>
+                    </div>
+                    <div class="pure-u-1-3">
+                        <div class="l-box">
+                            <img src="{{ pizza.imagem.url }}"
+                                alt="Pizza de {{ pizza.nome }}" width="400" height="250">
+                        </div>
+                    </div>
+                </div>
+                {% endif %}
+                {% if forloop.counter|divisibleby:2 %}
+                <div class="pure-g-r content-ribbon">
+                    <div class="pure-u-1-3">
+                        <div class="l-box">
+                            <img src="{{ pizza.imagem.url }}"
+                                alt="Pizza de {{ pizza.nome }}" width="400" height="250">
+                        </div>
+                    </div>
+                    <div class="pure-u-2-3">
+                        <div class="l-box">
+                            <h4 class="content-subhead">{{ pizza.nome }}</h4>
+                            <h3>{{ pizza.ingredientes }}</h3>
+                            <p style = color:dimgray >
+                                {{ pizza.descrição }}
+                            </p>
+                            <h3>R$ {{ pizza.preço }}</h3>
+                        </div>
+                    </div>
+                </div>
+                {% endif %}
+            {% endfor %}
+        </ul>
+        <div class="footer">
+            MON_CEC 2021
+        </div>
+</div>
+</body>
+</html>
