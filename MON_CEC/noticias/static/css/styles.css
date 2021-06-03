@@ -29,10 +29,11 @@ body {
 .splash {
     margin: 2em auto 0;
     padding: 3em 0.5em;
-    background-image: url(Images/download.jpg);
+    background-image: url(Images/covid.jpg);
     background-attachment: fixed;
+    background-position: center;
     padding-top: 8%;
-    background-repeat: no-repeat;
+    background-repeat: repeat;
     height: 500px;
     width: auto;
 }
@@ -47,8 +48,9 @@ body {
 .splash .splash-subhead {
     font-family: OriginTech;
     margin-top: 150px;
-    text-shadow: 1px 1px #000000;
-    color: #ffffff;
+    text-shadow: 1px 1px #ffffff;
+    color: #0000FF;
+    font-size: 200%;
     font-weight: 300;
     line-height: 1.4em;
 }

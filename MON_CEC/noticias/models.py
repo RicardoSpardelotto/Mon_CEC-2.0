@@ -1,4 +1,5 @@
 from django.db import models
+from django.db.models.fields import DateField
 
 class Noticia(models.Model):
     titulo = models.CharField(max_length=100)
