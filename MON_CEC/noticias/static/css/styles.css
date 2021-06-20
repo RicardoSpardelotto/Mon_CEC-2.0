@@ -2,39 +2,48 @@
     font-family: OriginTech;
     src: url(fonts/OriginTech\ personal\ use.ttf);
 }
+.container-fluid{
+    padding: 0;
+}
+
+/*NavBar*/
+
+.navbar {
+    border-bottom: 1px solid #333;
+
+}
+
+.navbar-nav {
+    margin: auto;
+}
+
+.navbar-brand {
+    font-family: OriginTech; 
+    font-weight: bold;
+    margin-left: 30px;
+    margin-right: -120px;
+
+}
+
+.navbar-light .navbar-nav a.navbar-link {
+    color: #333;
+    letter-spacing: 1px;
+}
 * {
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
     box-sizing: border-box;
 }
-body {
-    margin: 0 auto;
-    line-height: 1.7em;
-}
-.l-box {
-    padding: 1em;
-}
-.header {
-    margin: 0 0;
-}
-.header .pure-menu {
-    padding: 0.5em;
-}
-.header .pure-menu li a:hover,
-.header .pure-menu li a:focus {
-    background: none;
-    border: none;
-    color: #332E33;
-}
+
 .splash {
-    margin: 2em auto 0;
+    margin: auto 0;
     padding: 3em 0.5em;
     background-image: url(Images/covid.jpg);
     background-attachment: fixed;
     background-position: center;
     padding-top: 8%;
     background-repeat: repeat;
-    height: 500px;
+    height: 400px;
     width: auto;
 }
 .splash .splash-head {
@@ -79,10 +88,18 @@ body {
     display: inline;
     font-weight: normal;
 }
-.footer {
-    background: #111;
-    color: #666;
+
+/*Rodapé*/
+
+footer {
+    background-color: #333;
+    height: 200px;
+    border-top: 2px solid #202020;
+}
+
+footer p {
+    color: #f5f5f5;
     text-align: center;
-    padding: 1em;
-    font-size: 80%;
+    top: 40%;
+    position: relative;
 }

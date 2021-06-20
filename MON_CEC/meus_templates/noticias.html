@@ -1,39 +1,19 @@
 <!doctype html>
+{% extends 'base.html' %}
 {% load static %}
+{% block title %} Noticiário {% endblock title %}
+{% block content %}
 <html lang="pt">
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MON_CEC</title>
     <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.3.0/pure-min.css">
     <link rel="stylesheet" href="{% static 'css/styles.css' %}" />
 </head>
 <body>
 <div class="content">
-    <div class="header">
-        <div class="pure-menu pure-menu-open pure-menu-fixed pure-menu-horizontal">
-            <a class="pure-menu-heading" href="">MON_CEC</a>
-            <ul>
-                <li class="pure-menu-selected"><a href="#">Cadastro</a></li>
-                <li><a href="#">Contato</a></li>
-            </ul>
-        </div>
-    </div>
-    <div class="splash">
-        <div class="pure-g-r">
-            <div class="pure-u-1">
-                <div class="l-box splash-text">
-                    <h1 class="splash-head" style="text-align: center;">
-                        MON_CEC
-                    </h1>
-                    <h2 class="splash-subhead" style="text-align: center;">
-                        NOTICIÁRIO
-                     </h2>
-                </div>
-            </div>
-        </div>
-    </div>
     <ul class="content">
+        <h2 class="splash-subhead" style="text-align: center;">NOTICIÁRIO</h2>
             {% for noticia in noticias %}
                 {% if not forloop.counter|divisibleby:2 %}
                 <div class="pure-g-r content-ribbon">
@@ -73,9 +53,7 @@
                 {% endif %}
             {% endfor %}
         </ul>
-        <div class="footer">
-            MON_CEC 2021
-        </div>
 </div>
 </body>
+{% endblock content %}
 </html>

@@ -11,3 +11,6 @@ def register(request):
 def cadastro(request):
     return HttpResponse('cadastro')
 
+def yourName(request, name):
+    return render(request, 'yourname.html', {'name': name}) 
+
