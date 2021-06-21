@@ -1,7 +1,9 @@
 from django.shortcuts import render
 from django.http import HttpResponse
+from .models import Sobre
 
 
 
 def about(request):
-    return HttpResponse('about')
+    about = Sobre.objects.all()
+    return render(request, 'about.html', {'about':about})
