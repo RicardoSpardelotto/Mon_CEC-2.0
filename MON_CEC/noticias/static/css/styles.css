@@ -89,6 +89,28 @@
     font-weight: normal;
 }
 
+/*Login*/
+
+.auth-card {
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+.container-fluid .row {
+    margin: 0;
+}
+
+.change-form-p {
+    margin-top: 30px;
+    text-align: center;
+}
+
+/*Home*/
+
+.list-group {
+    margin-right: 30px;
+}
+
 /*Rodapé*/
 
 footer {
