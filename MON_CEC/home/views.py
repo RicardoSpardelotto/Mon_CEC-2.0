@@ -7,7 +7,7 @@ from django.core.paginator import Paginator
 def home(request):
     home_list = Dado.objects.all().order_by('-data')
 
-    paginator = Paginator(home_list,1)
+    paginator = Paginator(home_list,50)
 
     page = request.GET.get('page')
 
