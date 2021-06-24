@@ -6,5 +6,12 @@ $(document).ready(function(){
 
         e.preventDefault();
 
+        var delLink = $(this).attr('href');
+        var result = confirm('Quer deletar esse membro?')
+
+        if(result) {
+            window.location.href = delLink;
+        }
+
     });
 });
