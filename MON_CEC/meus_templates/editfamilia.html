@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %} Editando '{{ familia.nome }}' {% endblock title %}
+{% block content %}
+<html lang="pt">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.3.0/pure-min.css">
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}" />
+</head>
+<body>
+    <div class="offset-1 col-10 list-div">
+        <h2 class="splash-subhead" style="text-align: center;">Editando '{{ familia.nome }}'</h2>
+        <form method="POST">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <input type="submit" class="btn btn-success" value="Finalizar edição">
+        </form>
+        
+    </div>
+</body>
+{% endblock content %}
+</html>

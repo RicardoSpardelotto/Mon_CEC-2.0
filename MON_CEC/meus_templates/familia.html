@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %} Família {% endblock title %}
+{% block content %}
+<html lang="pt">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.3.0/pure-min.css">
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}" />
+</head>
+<body>
+    <div class="offset-1 col-10 list-div">
+        <h2 class="splash-subhead" style="text-align: center;">Cadastro Familiar</h2>
+        <a id ="add-link" href="newfamilia/">
+            <div class="col-2 add-div">
+                <i class="fas fa-plus"></i> Adicionar Membro
+            </div>
+        </a>
+        <div class="col-9 search-div">
+            <input class="form-control" type="text" id="search" placeholder="Digite o nome do membro familiar">
+            <i class="fas fa-search"></i>
+        </div>
+        {% if messages %}
+            <ul class="messages">
+                {% for message in messages %}
+                    <li {% if message.tags %}class="alert alert-{{message.tags}}"{% endif %}>{{ message }}</li>
+                {% endfor %}
+            </ul>
+        {% endif %}
+        <ul class="list-group">
+            {% for fami in familia %}
+            <li class="list-group-item">
+                <span><a href="/familia/{{ fami.id }}">{{ fami.nome }}</a></span>
+                <a href="delete/{{fami.id}}" class="delete-btn"><span><i class="fas fa-trash"></i></span></a>
+                <a href="edit/{{fami.id}}"><span><i class="fas fa-edit"></i></span></a>
+            </li>
+            {% endfor %}
+        </ul>
+    </div>
+</body>
+{% endblock content %}
+</html>

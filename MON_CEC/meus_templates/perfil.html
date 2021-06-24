@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %} Família {% endblock title %}
+{% block content %}
+<html lang="pt">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.3.0/pure-min.css">
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}" />
+</head>
+<body>
+    <div class="offset-1 col-10 list-div">
+        <h2 class="splash-subhead" style="text-align: center;">{{familia.nome}}</h2>
+        <ul class="list-group">
+            <li class="list-group-item">CPF: {{familia.cpf}}</li>
+            <li class="list-group-item">Sexo: {{familia.sexo}} </li>
+            <li class="list-group-item">Nascimento: {{familia.nascimento}}</li>
+            <li class="list-group-item">Grau de Parentesco: {{familia.graudeparentesco}}</li>
+            <li class="list-group-item">Comorbidades: {{familia.comorbidades}}</li>
+            <li class="list-group-item">País: {{familia.pais}}</li>
+            <li class="list-group-item">Estado: {{familia.estado}}</li>
+            <li class="list-group-item">Cidade: {{familia.cidade}}</li>
+            <li class="list-group-item">Rua: {{familia.rua}}</li>
+            <li class="list-group-item">Bairro: {{familia.bairro}}</li>
+            <li class="list-group-item">Complemento: {{familia.complemento}}</li>
+            <li class="list-group-item">Médico Responsável: {{familia.medicoresponsavel}}</li>
+            <li class="list-group-item">Especialização do médico: {{familia.especializacaodomedico}}</li>
+            <li class="list-group-item">Hospital: {{familia.hospital}}</li>
+            <li class="list-group-item">Telefone: {{familia.telefone}}</li>
+            <li class="list-group-item">Sintomas: {{familia.sintomas}}</li>
+            <li class="list-group-item">Altura: {{familia.altura}}</li>
+            <li class="list-group-item">Peso: {{familia.peso}}</li>
+            <li class="list-group-item">Testes realizados: {{familia.testesrealizados}}</li>
+          </ul>
+        
+    </div>
+</body>
+{% endblock content %}
+</html>
